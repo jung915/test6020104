@@ -1,3 +1,31 @@
+def on_a_pressed():
+    global projectile
+    projectile = sprites.create_projectile_from_sprite(img("""
+            . . . . . . . . . . . . . . . . 
+                    . . . . . . 6 6 6 6 . . . . . . 
+                    . . . . 6 6 6 5 5 6 6 6 . . . . 
+                    . . . 7 7 7 7 6 6 6 6 6 6 . . . 
+                    . . 6 7 7 7 7 8 8 8 1 1 6 6 . . 
+                    . . 7 7 7 7 7 8 8 8 1 1 5 6 . . 
+                    . 6 7 7 7 7 8 8 8 8 8 5 5 6 6 . 
+                    . 6 7 7 7 8 8 8 6 6 6 6 5 6 6 . 
+                    . 6 6 7 7 8 8 6 6 6 6 6 6 6 6 . 
+                    . 6 8 7 7 8 8 6 6 6 6 6 6 6 6 . 
+                    . . 6 8 7 7 8 6 6 6 6 6 8 6 . . 
+                    . . 6 8 8 7 8 8 6 6 6 8 6 6 . . 
+                    . . . 6 8 8 8 8 8 8 8 8 6 . . . 
+                    . . . . 6 6 8 8 8 8 6 6 . . . . 
+                    . . . . . . 6 6 6 6 . . . . . . 
+                    . . . . . . . . . . . . . . . .
+        """),
+        mySprite,
+        0,
+        -70)
+    mySprite.start_effect(effects.fire)
+controller.A.on_event(ControllerButtonEvent.PRESSED, on_a_pressed)
+
+projectile: Sprite = None
+mySprite: Sprite = None
 effects.blizzard.start_screen_effect()
 mySprite = sprites.create(img("""
         ........................
